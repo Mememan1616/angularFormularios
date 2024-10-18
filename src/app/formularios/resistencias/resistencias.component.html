@@ -1,0 +1,103 @@
+<div>
+    <h1 class="text-6xl text-blue-600 dark:text-white text-center">Resistencias</h1>
+    <div><p>-</p></div>
+  <form [formGroup] = "formResistencias" (ngSubmit)="calcularResistencia()" class="">
+    <div class="grid grid-cols-6 gap-6">
+      <div>
+        <label
+          for="countries"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Elige Resistencia 1</label
+        >
+        <select
+          id="countries"
+          formControlName="color1"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option selected>Elige Resistencia</option>
+          <option value="0">Negro</option>
+          <option value="1">Cafe</option>
+          <option value="2">Rojo</option>
+          <option value="3">Naranja</option>
+          <option value="4">Amarillo</option>
+          <option value="5">Verde</option>
+          <option value="6">Azul</option>
+          <option value="7">Violeta</option>
+          <option value="8">Gris</option>
+          <option value="9">Blanco</option>
+        </select>
+      </div>
+
+      <div>
+        <label
+          for="countries"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Elige Resistencia 2</label
+        >
+        <select
+          id="resistencias"
+          formControlName="color2"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option selected>Elige Resistencia</option>
+          <option value="0">Negro</option>
+          <option value="1">Cafe</option>
+          <option value="2">Rojo</option>
+          <option value="3">Naranja</option>
+          <option value="4">Amarillo</option>
+          <option value="5">Verde</option>
+          <option value="6">Azul</option>
+          <option value="7">Violeta</option>
+          <option value="8">Gris</option>
+          <option value="9">Blanco</option>
+        </select>
+      </div>
+
+      <div>
+        <label
+          for="countries"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Elige Multiplicador</label
+        >
+        <select
+          id="countries"
+          formControlName="color3"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option selected>Elige Resistencia</option>
+          <option value="1">Negro</option>
+          <option value="10">Cafe</option>
+          <option value="100">Rojo</option>
+          <option value="1000">Naranja</option>
+          <option value="10000">Amarillo</option>
+          <option value="100000">Verde</option>
+          <option value="1000000">Azul</option>
+          <option value="10000000">Violeta</option>
+          <option value="100000000">Gris</option>
+          <option value="1000000000">Blanco</option>
+        </select>
+      </div>
+      <div>
+        <label
+          for="countries"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Margen de error</label
+        >
+        <select
+          id="countries"
+          formControlName="tolerancia"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option selected>Selecciona color</option>
+          <option value="0.05">Dorado</option>
+          <option value="0.10">Plata</option>
+        </select>
+      </div>
+    </div>
+    <div>
+        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    </div>
+  </form>
+  
+ <a>{{resistencia.resultado}}</a>
+</div>
