@@ -7,7 +7,7 @@
         <label
           for="countries"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >Elige Resistencia 1</label
+          >Elige Color 1</label
         >
         <select
           id="countries"
@@ -32,7 +32,7 @@
         <label
           for="countries"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >Elige Resistencia 2</label
+          >Elige Color 2</label
         >
         <select
           id="resistencias"
@@ -57,7 +57,7 @@
         <label
           for="countries"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >Elige Multiplicador</label
+          >Elige Color 3</label
         >
         <select
           id="countries"
@@ -81,7 +81,7 @@
         <label
           for="countries"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >Margen de error</label
+          >Elige la Tolerancia</label
         >
         <select
           id="countries"
@@ -99,5 +99,88 @@
     </div>
   </form>
   
- <a>{{resistencia.resultado}}</a>
+<div class="relative overflow-x-auto">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr >
+              <th scope="col" class="px-6 py-3">
+                  Color 1
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Color 2
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Color 3
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Tolerancia
+            </th>
+              <th scope="col" class="px-6 py-3">
+                  Resistencia Total 
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Resistencia Maxima
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Resistencia Minima
+          </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr  *ngFor="let res of resultados" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <td scope="row" class="px-6 py-4">
+              <a *ngIf="res.color1==0">Negro</a>
+              <a *ngIf="res.color1==1">Cafe</a>
+              <a *ngIf="res.color1==2">Rojo</a> 
+              <a *ngIf="res.color1==3">Naranja</a>
+              <a *ngIf="res.color1==4">Amarillo</a>
+              <a *ngIf="res.color1==5">Verde</a>
+              <a *ngIf="res.color1==6">Azul</a>
+              <a *ngIf="res.color1==7">Violeta</a>
+              <a *ngIf="res.color1==8">Gris</a>
+              <a *ngIf="res.color1==9">Blanco</a>
+              </td>
+              <td class="px-6 py-4">
+                <a *ngIf="res.color2==0">Negro</a>
+                <a *ngIf="res.color2==1">Cafe</a>
+                <a *ngIf="res.color2==2">Rojo</a> 
+                <a *ngIf="res.color2==3">Naranja</a>
+                <a *ngIf="res.color2==4">Amarillo</a>
+                <a *ngIf="res.color2==5">Verde</a>
+                <a *ngIf="res.color2==6">Azul</a>
+                <a *ngIf="res.color2==7">Violeta</a>
+                <a *ngIf="res.color2==8">Gris</a>
+                <a *ngIf="res.color2==9">Blanco</a>
+              </td>
+              <td class="px-6 py-4">
+                <a *ngIf="res.color3==0">Negro</a>
+                <a *ngIf="res.color3==10">Cafe</a>
+                <a *ngIf="res.color3==100">Rojo</a>
+                <a *ngIf="res.color3==1000">Naranja</a>
+                <a *ngIf="res.color3==10000">Amarillo</a>
+                <a *ngIf="res.color3==100000">Verde</a>
+                <a *ngIf="res.color3==1000000">Azul</a>
+                <a *ngIf="res.color3==10000000">Violeta</a>
+                <a *ngIf="res.color3==100000000">Gris</a>
+                <a *ngIf="res.color3==1000000000">Blanco</a>
+              </td>
+              <td class="px-6 py-4">
+              <a *ngIf="res.tolerancia==0.05">Dorado</a>
+              <a *ngIf="res.tolerancia==0.1">Plateado</a>
+              
+            </td>
+              <td class="px-6 py-4">
+                  {{res.resultado}} ohms
+              </td>
+              <td class="px-6 py-4">
+                {{res.max}} ohms
+            </td>
+            <td class="px-6 py-4">
+              {{res.min}} ohms
+          </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
 </div>
