@@ -20,7 +20,7 @@ interface resistencias{
   standalone: true,
   imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './resistencias.component.html',
-  styles: ``
+  styles: ""
 })
 export class ResistenciasComponent {
   formResistencias!: FormGroup;

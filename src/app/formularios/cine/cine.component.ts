@@ -5,10 +5,12 @@ import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 interface compra {
   personas: number,
   boletos: number,
-  tarjeta: boolean,
+  tarjeta: number,
   precioN: number,
   descuento: number,
-  total: number
+  total: number,
+  mensaje: string,
+  autorizada:number
 }
 
 @Component({
@@ -24,10 +26,12 @@ export class CineComponent {
   compra: compra = {
     personas: 0,
     boletos: 0,
-    tarjeta: false,
+    tarjeta: 0,
     precioN: 0,
     descuento: 0,
-    total: 0
+    total: 0,
+    mensaje: "",
+    autorizada:0
   }
 
   constructor(private readonly fb: FormBuilder) {
@@ -50,34 +54,48 @@ export class CineComponent {
     const { personas, boletos, tarjeta } = this.formCine.value;
     this.compra.personas = Number(personas);
     this.compra.boletos = Number(boletos);
-    this.compra.tarjeta = Boolean(tarjeta);
+    this.compra.tarjeta = Number(tarjeta);
+    this.compra.mensaje="";
+    this.compra.descuento=0;
+    this.compra.total=0;
+    this.compra.autorizada=0;
     let message: string = "";
     const precio: number = 12;
     let maxboletos = this.compra.personas * 7;
 
     if (this.compra.boletos > maxboletos) {
-      message = "No puedes comprar'" + this.compra.total;
+      message = "No puedes comprar " + this.compra.boletos+ " boletos para solo para "+ this.compra.personas + " personas";
+      this.compra.autorizada=0;
     }
     else {
+      this.compra.autorizada=1;
       this.compra.precioN = this.compra.boletos * precio;
-      if (this.compra.boletos >= 5) {
+
+      if (this.compra.boletos > 5) {
         this.compra.descuento = this.compra.precioN * 0.15;
-      } else if (this.compra.boletos >= 3) {
+
+      }else if (this.compra.boletos >= 3 && this.compra.boletos<=5) {
+
         this.compra.descuento = this.compra.precioN * 0.10;
-      } else if (this.compra.boletos >= 2) {
+
+      } else if (this.compra.boletos<=2) {
         this.compra.descuento = 0
       }
 
       this.compra.total = this.compra.precioN - this.compra.descuento;
-
-      if (this.compra.tarjeta == true) {
+  
+      if(this.compra.tarjeta == 1) {
         this.compra.descuento = this.compra.total * 0.10;
-        this.compra.total = this.compra.precioN - this.compra.descuento;
+        console.log(tarjeta);
+        this.compra.total = this.compra.total - this.compra.descuento;
       }
-      message="El total es "+ this.compra.total;
 
+      message = "El total es " + this.compra.total;
+      
+     
     }
-
+    this.compra.mensaje = message
+    console.log(this.compra.autorizada);
     return message;
   }
 

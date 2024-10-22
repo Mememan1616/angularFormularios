@@ -1,4 +1,5 @@
-<div>
+
+  <div>
     <h1 class="text-6xl text-blue-600 dark:text-white text-center">Resistencias</h1>
     <div><p>-</p></div>
   <form [formGroup] = "formResistencias" (ngSubmit)="calcularResistencia()" class="">
@@ -128,40 +129,40 @@
       </thead>
       <tbody>
           <tr  *ngFor="let res of resultados" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <td scope="row" class="px-6 py-4">
-              <a *ngIf="res.color1==0">Negro</a>
-              <a *ngIf="res.color1==1">Cafe</a>
-              <a *ngIf="res.color1==2">Rojo</a> 
-              <a *ngIf="res.color1==3">Naranja</a>
-              <a *ngIf="res.color1==4">Amarillo</a>
-              <a *ngIf="res.color1==5">Verde</a>
-              <a *ngIf="res.color1==6">Azul</a>
-              <a *ngIf="res.color1==7">Violeta</a>
-              <a *ngIf="res.color1==8">Gris</a>
-              <a *ngIf="res.color1==9">Blanco</a>
+            <td class="px-6 py-4">
+              <p class="bg-gray-800 text-white" *ngIf="res.color1==0">Negro</p>
+              <p class="bg-red-900 text-white" *ngIf="res.color1==1">Cafe</p>
+              <p class="bg-red-600 text-white"  *ngIf="res.color1==2">Rojo</p> 
+              <p class="bg-orange-500 text-white"  *ngIf="res.color1==3">Naranja</p>
+              <p class="bg-yellow-300 text-gray-900"  *ngIf="res.color1==4">Amarillo</p>
+              <p class="bg-green-600 text-white"  *ngIf="res.color1==5">Verde</p>
+              <p class="bg-blue-500 text-white" *ngIf="res.color1==6">Azul</p>
+              <p class="bg-purple-600 text-white"  *ngIf="res.color1==7">Violeta</p>
+              <p class="bg-gray-200 text-white"  *ngIf="res.color1==8">Gris</p>
+              <p class="bg-white"  *ngIf="res.color1==9">Blanco</p>
+            </td>
+              <td class="px-6 py-4">
+                <p class="bg-gray-800 text-white" *ngIf="res.color2==0">Negro</p>
+                <p class="bg-red-900 text-white" *ngIf="res.color2==1">Cafe</p>
+                <p class="bg-red-600 text-white"  *ngIf="res.color2==2">Rojo</p> 
+                <p class="bg-orange-500 text-white"  *ngIf="res.color2==3">Naranja</p>
+                <p class="bg-yellow-300 text-gray-900"  *ngIf="res.color2==4">Amarillo</p>
+                <p class="bg-green-600 text-white"  *ngIf="res.color2==5">Verde</p>
+                <p class="bg-blue-500 text-white" *ngIf="res.color2==6">Azul</p>
+                <p class="bg-purple-600 text-white"  *ngIf="res.color2==7">Violeta</p>
+                <p class="bg-gray-200 text-white"  *ngIf="res.color2==8">Gris</p>
+                <p class="bg-white"  *ngIf="res.color2==9">Blanco</p>
               </td>
               <td class="px-6 py-4">
-                <a *ngIf="res.color2==0">Negro</a>
-                <a *ngIf="res.color2==1">Cafe</a>
-                <a *ngIf="res.color2==2">Rojo</a> 
-                <a *ngIf="res.color2==3">Naranja</a>
-                <a *ngIf="res.color2==4">Amarillo</a>
-                <a *ngIf="res.color2==5">Verde</a>
-                <a *ngIf="res.color2==6">Azul</a>
-                <a *ngIf="res.color2==7">Violeta</a>
-                <a *ngIf="res.color2==8">Gris</a>
-                <a *ngIf="res.color2==9">Blanco</a>
-              </td>
-              <td class="px-6 py-4">
-                <a *ngIf="res.color3==0">Negro</a>
-                <a *ngIf="res.color3==10">Cafe</a>
-                <a *ngIf="res.color3==100">Rojo</a>
-                <a *ngIf="res.color3==1000">Naranja</a>
-                <a *ngIf="res.color3==10000">Amarillo</a>
-                <a *ngIf="res.color3==100000">Verde</a>
-                <a *ngIf="res.color3==1000000">Azul</a>
-                <a *ngIf="res.color3==10000000">Violeta</a>
-                <a *ngIf="res.color3==100000000">Gris</a>
+                <a  class="bg-gray-800 text-white" *ngIf="res.color3==0">Negro</a>
+                <a  class="bg-red-900 text-white" *ngIf="res.color3==10">Cafe</a>
+                <a class="bg-red-600 text-white" *ngIf="res.color3==100">Rojo</a>
+                <a class="bg-orange-500 text-white" *ngIf="res.color3==1000">Naranja</a>
+                <a  class="bg-yellow-300 text-gray-900" *ngIf="res.color3==10000">Amarillo</a>
+                <a  class="bg-green-600 text-white" *ngIf="res.color3==100000">Verde</a>
+                <a  class="bg-blue-500 text-white" *ngIf="res.color3==1000000">Azul</a>
+                <a class="bg-purple-600 text-white" *ngIf="res.color3==10000000">Violeta</a>
+                <a class="bg-gray-200 text-white" *ngIf="res.color3==100000000">Gris</a>
                 <a *ngIf="res.color3==1000000000">Blanco</a>
               </td>
               <td class="px-6 py-4">
