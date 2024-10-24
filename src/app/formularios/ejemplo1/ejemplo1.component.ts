@@ -20,6 +20,8 @@ export default class Ejemplo1Component implements OnInit {
 
   //crea un objeto a partir de de FormGroup,el cual es un objeto de angular para crear formularios
   formGroup!: FormGroup;
+
+  nombre2:string='Alex';
   persona:Usuario = {
     matricula:0,
     nombre:'',
@@ -62,6 +64,10 @@ export default class Ejemplo1Component implements OnInit {
     this.persona.apellido=apellido;
     this.persona.edad=edad;
     this.persona.email=email;
+
+    let datosJSON=JSON.stringify(this.persona);
+
+    localStorage.setItem('persona',datosJSON);
 
   }
 }
