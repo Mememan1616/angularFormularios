@@ -14,7 +14,7 @@ interface numeros{
   templateUrl: './ejemplo2.component.html',
   styles: ``
 })
-export class Ejemplo2Component {
+export default class Ejemplo2Component {
   formSuma!: FormGroup;
 
   suma:numeros = {

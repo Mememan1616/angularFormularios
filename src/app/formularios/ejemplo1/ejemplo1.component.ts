@@ -16,7 +16,7 @@ interface Usuario{
   templateUrl: './ejemplo1.component.html',
   styles: ``
 })
-export class Ejemplo1Component implements OnInit {
+export default class Ejemplo1Component implements OnInit {
 
   //crea un objeto a partir de de FormGroup,el cual es un objeto de angular para crear formularios
   formGroup!: FormGroup;

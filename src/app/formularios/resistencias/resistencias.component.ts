@@ -22,7 +22,7 @@ interface resistencias{
   templateUrl: './resistencias.component.html',
   styles: ""
 })
-export class ResistenciasComponent {
+export default class ResistenciasComponent {
   formResistencias!: FormGroup;
   resultados: resistencias[] = []; // Arreglo para almacenar los resultados
   cont:number=0;

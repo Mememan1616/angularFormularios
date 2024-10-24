@@ -20,7 +20,7 @@ interface compra {
   templateUrl: './cine.component.html',
   styleUrl: './cine.component.css'
 })
-export class CineComponent {
+export default class CineComponent {
   formCine !: FormGroup;
 
   compra: compra = {
